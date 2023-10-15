@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#8854c0" />
+    <meta name="apple-mobile-web-app-status-bar" content="#8854c0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="/manifest-menu.json" />
+  </head>
+  <body class="flex">
+    <div class="wrapper">
+      <a class="logout-btn pointer" href="/logout">Logout</a>
+
+      <div class="container">
+        <h1>Welcome <span><%=username %></span></h1>
+
+        <select class="category pointer">
+          <option value="0">Select a Category...</option>
+        </select>
+        <br />
+        <select class="difficulty pointer">
+          <option value="0">Select difficulty mode...</option>
+          <option>Easy</option>
+          <option>Medium</option>
+          <option>Hard</option>
+        </select>
+        <form class="submit">
+          <input
+            class="number-of-questions"
+            placeholder="Enter the number of Questions"
+          />
+          <br />
+          <small class="warn">Please fill the fields!</small>
+          <button class="start-btn pointer">Start the Quiz</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/menu.js"></script>
+  </body>
+</html>

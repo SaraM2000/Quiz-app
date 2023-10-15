@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#8854c0" />
+    <meta name="apple-mobile-web-app-status-bar" content="#8854c0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Quiz Game</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/questions.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="/manifest-questions.json" />
+  </head>
+  <body class="flex">
+    <div class="wrapper">
+      <div class="quiz-head">
+        <div class="quiz-score flex">
+          <span id="correct-score" name></span>/<span id="total-question"></span>
+        </div>
+      </div>
+      <div class="quiz-body">
+        <div class="questions-mode">
+          <h2 class="category"></h2>
+          <h3 class="difficulty"></h3>
+        </div>
+        <h2 class="quiz-question" id="question">
+          <br />
+        </h2>
+        <ol class="quiz-options">
+          <li>Hyper text transfer package</li>
+        </ol>
+        <div id="result"></div>
+      </div>
+      <div class="quiz-foot">
+        <button id="check-answer" class="pointer">Check Answer</button>
+        <button id="play-again" class="pointer">Play Again!</button>
+        <button id="menu-btn" class="pointer">Go back to Menu</button>
+      </div>
+    </div>
+
+    <script src="/js/questions.js"></script>
+  </body>
+</html>

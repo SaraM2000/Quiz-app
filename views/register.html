@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8854c0" />
+    <meta name="apple-mobile-web-app-status-bar" content="#8854c0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Quiz Game</title>
+
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="apple-touch-icon" href="/icon-home.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="/manifest-register.json" />
+  </head>
+  <body class="flex">
+    <div class="wrapper">
+      <h1>Welcome to Quiz Game</h1>
+      <div class="form_container flex">
+        <div class="form login_form <%= signup ? 'hidden' : '' %>">
+          <form action="/login" method="post">
+            <h2>Login</h2>
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" name="email" />
+              <i class="uil uil-envelope-alt email"></i>
+              <% if(error && error.email) { %>
+              <span class="error_message"><%= error.email.msg %></span><br />
+              <% } %>
+            </div>
+            <div class="input_box">
+              <input
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+              />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide pointer"></i>
+              <% if(error && error.password) { %>
+              <span class="error_message"><%= error.password.msg %></span>
+              <% } if(error) { %>
+              <span class="error_message" style="left: 20%"
+                ><%= error[0] %></span
+              >
+              <% } %>
+            </div>
+
+            <div class="option_field">
+              <span class="checkbox">
+                <input type="checkbox" id="check" name="remember" />
+                <label for="check">Remember me</label>
+              </span>
+            </div>
+            <button class="pointer btn" type="submit">Login Now</button>
+            <div class="login_signup">
+              Don't have an account?
+              <a href="#" id="signup">Signup</a>
+            </div>
+          </form>
+        </div>
+        <div class="form signup_form <%= !signup ? 'hidden' : '' %>">
+          <form action="/signup" method="post">
+            <h2>Signup</h2>
+            <div class="input_box">
+              <input
+                type="text"
+                name="username"
+                placeholder="Create username"
+              />
+              <i class="uil uil-user person"></i>
+              <% if(error && error.username) { %>
+              <span class="error_message"><%= error.username.msg %></span>
+              <% } if(error.length > 0) { %>
+              <span class="error_message"><%= error %></span>
+              <% } %>
+            </div>
+            <div class="input_box">
+              <input type="email" name="email" placeholder="Enter your email" />
+              <i class="uil uil-envelope-alt email"></i>
+              <% if(error && error.email) { %>
+              <span class="error_message"><%= error.email.msg %></span>
+              <% } if(error.length > 0) { %>
+              <span class="error_message"><%= error %></span>
+              <% } %>
+            </div>
+            <div class="input_box">
+              <input
+                type="password"
+                name="password"
+                placeholder="Create password"
+              />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+              <% if(error && error.password) { %>
+              <span class="error_message"><%= error.password.msg %></span>
+              <% } %>
+            </div>
+
+            <button type="submit" class="pointer signup-btn btn">
+              Signup Now
+            </button>
+            <div class="login_signup">
+              Already have an account?
+              <a href="#" id="login">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/register.js"></script>
+    <script src="/sw-register.js"></script>
+  </body>
+</html>
